@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a73a291-0a2c-4df6-ad30-7c64166aee52" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/tictactoe/core/InvalidMoveException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/tictactoe/core/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/tictactoe/core/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/tictactoe/core/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/tictactoe/core/Move.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/tictactoe/core/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/ivanfsilva/tictactoe/core/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +85,7 @@
       <workItem from="1587044378126" duration="622000" />
       <workItem from="1587045805256" duration="9377000" />
       <workItem from="1587130044184" duration="5988000" />
-      <workItem from="1587157866414" duration="2808000" />
+      <workItem from="1587157866414" duration="5330000" />
     </task>
     <servers />
   </component>
