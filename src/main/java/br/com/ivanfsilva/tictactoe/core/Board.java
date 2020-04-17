@@ -2,7 +2,6 @@ package br.com.ivanfsilva.tictactoe.core;
 
 import br.com.ivanfsilva.tictactoe.Constants;
 import br.com.ivanfsilva.tictactoe.ui.Ui;
-import com.sun.xml.internal.bind.v2.runtime.reflect.opt.Const;
 
 public class Board {
 

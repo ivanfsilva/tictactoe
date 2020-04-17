@@ -12,10 +12,18 @@ public class Game {
 
         Ui.printGameTitle();
 
-
-        board.print();
+        for (int i = 0; i < players.length; i++) {
+            players[i] = createPlayer(i);
+        }
 
     }
 
+    private Player createPlayer(int index) {
+        char symbol = Constants.SYMBOL_PLAYERS[index];
+        String name = Ui.readInput("Jogador " + (index +1) + " => ");
+        Player player = new Player(name, board, symbol);
+        Ui.printText("O jogador '" + name + "' vai usar o símbolo '" + symbol + "'");
 
+        return player;
+    }
 }
