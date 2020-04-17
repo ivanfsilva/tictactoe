@@ -1,16 +1,38 @@
 package br.com.ivanfsilva.tictactoe.core;
 
+import br.com.ivanfsilva.tictactoe.ui.Ui;
+
 public class Player {
 
-    String name;
-    Board board;
-    char symbol;
+    private String name;
+    private Board board;
+    private char symbol;
 
-    Move inputMove() {
-        return null;
+    public Player(String name, Board board, char symbol) {
+        this.name = name;
+        this.board = board;
+        this.symbol = symbol;
     }
 
-    void Play() {
+    private Move inputMove() {
+        String moveStr = Ui.readInput("Jogador '" + name + "' =>");
+        return new Move(moveStr);
+    }
 
+    public void play() {
+        Move move = inputMove();
+        board.play(this, move);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Board getBoard() {
+        return board;
+    }
+
+    public char getSymbol() {
+        return symbol;
     }
 }
