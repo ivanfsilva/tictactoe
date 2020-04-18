@@ -3,11 +3,13 @@ package br.com.ivanfsilva.tictactoe.score;
 import br.com.ivanfsilva.tictactoe.core.Player;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class FileScoreManager implements ScoreManager {
 
@@ -28,7 +30,7 @@ public class FileScoreManager implements ScoreManager {
             String line;
 
             while ((line = reader.readLine()) != null) {
-                String[] tokens = line.split("\\|,");
+                String[] tokens = line.split("\\|");
 
                 scoreMap.put(tokens[0], Integer.parseInt(tokens[1]));
             }
@@ -38,11 +40,28 @@ public class FileScoreManager implements ScoreManager {
 
     @Override
     public Integer getScore(Player player) {
-        return null;
+        return scoreMap.get(player.getName().toUpperCase());
     }
 
     @Override
-    public void saveScore(Player player) {
+    public void saveScore(Player player) throws IOException {
+        Integer score = getScore(player);
 
+        if (score == null) {
+            score = 0;
+        }
+
+        int newScore = score + 1 ;
+        scoreMap.put(player.getName().toUpperCase(),score + 1);
+
+        try (BufferedWriter writer = Files.newBufferedWriter(SCORE_FILE)) {
+            Set<Map.Entry<String, Integer>> entries = scoreMap.entrySet();
+            for (Map.Entry<String, Integer> entry : entries) {
+                String name = entry.getKey().toUpperCase();
+                Integer s = entry.getValue(); // s = score
+                writer.write(name + " | " + s);
+                writer.newLine();
+            }
+        }
     }
 }
